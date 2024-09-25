@@ -12,7 +12,12 @@ public class Main {
         System.out.println(seriesSum());
         System.out.println(palindrome("ппррпп"));
 
-
+        List<String> roots = discriminant(1, -2, 1);
+        if (roots == null) {
+            System.out.println("No roots");
+        } else {
+            System.out.println(roots);
+        }
     }
 
     public static List<String> fizzBuzz(int n) {
@@ -42,7 +47,7 @@ public class Main {
         return sb.toString();
     }
 
-    public static List<String> discriminant(int a, int b, int c) {
+    public static List<String> discriminant(double a, double b, double c) {
         List<String> result = new ArrayList<>();
         double determinant = Math.pow(b, 2) - 4 * a * c;
 
@@ -56,15 +61,13 @@ public class Main {
             double x = -b / (2 * a);
             result.add(String.valueOf(x));
         } else {
-            result.add("No roots");
+            result = null;
         }
 
         return result;
     }
 
     public static double seriesSum() {
-        List<Double> terms = new ArrayList<>();
-
         int n = 2;
         double sum = 0;
         double currentTerm = 1.0 / (n * n + n - 2);
@@ -85,6 +88,6 @@ public class Main {
         for (int i = input.length() - 1; i >= 0; i--) {
             sb.append(chars[i]);
         }
-        return input.equals(sb.toString());
+        return input.contentEquals(sb);
     }
 }

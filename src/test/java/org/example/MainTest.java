@@ -9,10 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class MainTest {
 
     @Test
-    void main() {
-    }
-
-    @Test
     void fizzBuzz() {
         int n = 1;
         List<String> list = Main.fizzBuzz(n);
